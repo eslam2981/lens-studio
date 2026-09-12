@@ -2,8 +2,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 export default function BlogControls({ categories, selectedCategory, onCategoryChange, searchQuery, onSearchChange }) {
   return (
-    <div className="mx-auto max-w-7xl px-6 mt-12 mb-8">
-      <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+    <div className="sticky top-24 z-40 bg-[#0a0a0a]/80 backdrop-blur-md border-b border-[#1f1f1f] py-4 mb-8 -mx-6 px-6 md:mx-0 md:px-0">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
         {/* Search */}
         <div className="w-full md:w-[350px]">
           <div className="relative w-full">
@@ -33,6 +34,7 @@ export default function BlogControls({ categories, selectedCategory, onCategoryC
             </button>
           ))}
         </div>
+      </div>
       </div>
     </div>
   );
