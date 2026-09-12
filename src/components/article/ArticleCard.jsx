@@ -8,9 +8,9 @@ export default function ArticleCard({ article, viewMode = "grid" }) {
   return (
     <Link 
       to={`/blog/${article.slug}`} 
-      className={`group bg-[#141414] rounded-2xl border border-[#1f1f1f] overflow-hidden hover:border-[#EE5E0E]/50 transition-all duration-300 hover:-translate-y-1 flex ${isList ? 'flex-row' : 'flex-col'}`}
+      className={`group bg-[#141414] rounded-2xl border border-[#1f1f1f] overflow-hidden hover:border-[#EE5E0E]/50 transition-all duration-300 hover:-translate-y-1 flex ${isList ? 'flex-col md:flex-row' : 'flex-col'}`}
     >
-      <div className={`relative overflow-hidden shrink-0 ${isList ? 'w-2/5 md:w-1/3' : 'h-56'}`}>
+      <div className={`relative overflow-hidden shrink-0 ${isList ? 'md:w-1/3 h-56 md:h-auto' : 'h-56'}`}>
         <img 
           src={article.image} 
           alt={article.title} 
@@ -22,9 +22,8 @@ export default function ArticleCard({ article, viewMode = "grid" }) {
         </div>
       </div>
       
-      <div className={`p-4 md:p-6 flex flex-col ${isList ? 'w-3/5 md:w-2/3' : 'flex-1'}`}>
+      <div className={`p-6 flex flex-col ${isList ? 'md:w-2/3' : 'flex-1'}`}>
         
-
         {/* Meta info row: Read Time & Date */}
         <div className="flex items-center gap-3 text-[#a1a1a1] text-xs font-medium mb-4">
           <span className="flex items-center gap-1.5">
@@ -40,8 +39,8 @@ export default function ArticleCard({ article, viewMode = "grid" }) {
           {article.title}
         </h3>
         
-        {/* Excerpt - hidden on mobile list view */}
-        <p className={`text-[#7a7a7a] text-xs md:text-sm mb-4 md:mb-8 line-clamp-2 leading-relaxed ${isList ? 'hidden sm:block' : ''}`}>
+        {/* Excerpt - always visible in this design */}
+        <p className="text-[#7a7a7a] text-sm mb-8 line-clamp-2 leading-relaxed">
           {article.excerpt}
         </p>
         

@@ -73,7 +73,7 @@ export default function Blog() {
               عرض <span className="text-white font-bold">{filteredPosts.length}</span> مقالات
             </p>
 
-            <div className="flex items-center gap-2">
+            <div className="hidden md:flex items-center gap-2">
               <button 
                 onClick={() => setViewMode("list")}
                 className={`w-8 h-8 rounded-lg flex items-center justify-center cursor-pointer transition-all ${
