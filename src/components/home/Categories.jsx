@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLightbulb, faUser, faMountainSun, faSliders, faGear } from "@fortawesome/free-solid-svg-icons";
+import { faLightbulb, faUser, faMountainSun, faSliders, faGear, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 const categories = [
   { id: 1, title: "إضاءة", count: 3, icon: faLightbulb, slug: "lighting" },
@@ -47,10 +47,13 @@ export default function Categories() {
                   </span>
                 </div>
 
-                <div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 transition-transform duration-500 group-hover:translate-x-2">
+                <div className="flex items-center justify-between mt-auto">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white transition-transform duration-500 group-hover:-translate-x-2">
                     {category.title}
                   </h3>
+                  <div className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center opacity-0 translate-x-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-0 group-hover:bg-white/20">
+                    <FontAwesomeIcon icon={faArrowLeft} className="text-white text-sm" />
+                  </div>
                 </div>
               </div>
             </Link>
