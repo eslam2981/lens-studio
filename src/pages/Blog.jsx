@@ -28,7 +28,7 @@ export default function Blog() {
   const cats = new Set(postsData.posts.map((p) => p.category));
   const categories = ["جميع المقالات", ...Array.from(cats)];
 
-  // Filter posts
+  // Filter
   const filteredPosts = postsData.posts.filter((post) => {
     const matchCategory = selectedCategory === "جميع المقالات" || post.category === selectedCategory;
     const matchSearch = post.title.includes(searchQuery) || post.excerpt.includes(searchQuery);

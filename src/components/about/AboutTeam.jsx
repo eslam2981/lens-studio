@@ -3,7 +3,7 @@ import { faTwitter, faLinkedinIn, faInstagram } from "@fortawesome/free-brands-s
 import postsData from "../../data/posts.json";
 
 export default function AboutTeam() {
-  // Extract unique authors from posts.json
+  // Unique authors
   const uniqueAuthorsMap = new Map();
   postsData.posts.forEach((post) => {
     if (!uniqueAuthorsMap.has(post.author.name)) {
